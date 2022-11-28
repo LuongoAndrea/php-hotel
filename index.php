@@ -39,7 +39,8 @@ $hotels = [
     ],
 
 ];
-
+$parcheggio = $_GET["parcheggio"];
+$voto = $_GET["voto"];
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +57,21 @@ $hotels = [
 
 <body>
     <div class="container">
-        <div class="row">
-
+        <div class="row ">
+            <form action="index.php" class="d-flex">
+                <div class="col-3 p-4">
+                    <input class="form-check-input me-1" type="radio" name="parcheggio" value="true" id="firstRadio"
+                        checked>
+                    <label class="form-check-label" for="firstRadio">Hotel con Pargheggio</label>
+                </div>
+                <div class="col-3 p-4">
+                    <label for="customRange2" class="">voto:</label>
+                    <input type="range" class="form-range" min="0" max="5" name="voto" id="customRange2">
+                </div>
+                <div class="col-auto p-4">
+                    <button type="submit" class="btn btn-primary mb-3">Vedi Hotel</button>
+                </div>
+            </form>
         </div>
         <div class="row">
             <?php foreach ($hotels as $item) { ?>
