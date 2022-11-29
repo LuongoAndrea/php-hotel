@@ -1,46 +1,5 @@
 <?php
 
-
-$hotels = [
-    [
-        'name' => 'Hotel Belvedere',
-        'description' => 'Hotel Belvedere Descrizione',
-        'parking' => true,
-        'vote' => 4,
-        'distance_to_center' => 10.4
-    ],
-    [
-        'name' => 'Hotel Futuro',
-        'description' => 'Hotel Futuro Descrizione',
-        'parking' => true,
-        'vote' => 2,
-        'distance_to_center' => 2
-    ],
-    [
-        'name' => 'Hotel Rivamare',
-        'description' => 'Hotel Rivamare Descrizione',
-        'parking' => false,
-        'vote' => 1,
-        'distance_to_center' => 1
-    ],
-    [
-        'name' => 'Hotel Bellavista',
-        'description' => 'Hotel Bellavista Descrizione',
-        'parking' => false,
-        'vote' => 5,
-        'distance_to_center' => 5.5
-    ],
-    [
-        'name' => 'Hotel Milano',
-        'description' => 'Hotel Milano Descrizione',
-        'parking' => true,
-        'vote' => 2,
-        'distance_to_center' => 50
-    ],
-
-];
-$parcheggio = $_GET["parcheggio"];
-$voto = $_GET["voto"];
 ?>
 
 <!DOCTYPE html>
@@ -58,13 +17,15 @@ $voto = $_GET["voto"];
 <body>
     <div class="container">
         <div class="row ">
-            <form action="index.php" class="d-flex">
+            <form action="hotel.php" class="d-flex">
                 <div class="col-3 p-4">
-                    <input class="form-check-input me-1" type="radio" name="parcheggio" value="true" id="firstRadio"
+                    <input class="form-check-input me-1" type="checkbox" name="parcheggio" value="1" id="firstRadio"
                         checked>
                     <label class="form-check-label" for="firstRadio">Hotel con Pargheggio</label>
                 </div>
                 <div class="col-3 p-4">
+                    <input class="form-check-input me-1" type="checkbox" name="votobox" value="1" id="secondRadio"
+                        checked>
                     <label for="customRange2" class="">voto:</label>
                     <input type="range" class="form-range" min="0" max="5" name="voto" id="customRange2">
                 </div>
@@ -73,32 +34,7 @@ $voto = $_GET["voto"];
                 </div>
             </form>
         </div>
-        <div class="row">
-            <?php foreach ($hotels as $item) { ?>
 
-            <div class="col-3 m-4">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <?php echo $item['name'] ?>
-                        </h5>
-
-                        <p class="card-text">
-                            <?php echo $item['description'] ?>
-                        </p>
-
-                        <span>
-                            <?php echo 'distanza dal centro: ' . $item['distance_to_center'] . ' km' ?>
-                        </span><br>
-                        <span>
-                            <?php echo 'voto: ' . $item['vote'] ?>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <?php } ?>
-        </div>
 
     </div>
 
